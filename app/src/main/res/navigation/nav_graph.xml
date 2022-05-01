@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nac_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.adrpien.navigationuiapp.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_watchFragment"
+            app:destination="@id/watchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.adrpien.navigationuiapp.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="com.adrpien.navigationuiapp.fragments.WatchFragment"
+        android:label="fragment_watch"
+        tools:layout="@layout/fragment_watch" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.adrpien.navigationuiapp.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/from_right"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/from_right" />
+        <action
+            android:id="@+id/action_homeFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+</navigation>
